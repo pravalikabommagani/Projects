@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calci</title>
+    <link rel="stylesheet" href="calistyle.css">
+</head>
+<body>
+    <div class="hey">
+        <div class="hello">
+            <input type="text" placeholder="value" id="ops-rce"> 
+<button onclick="show('+')">+</button>
+<button onclick="show('-')">-</button> 
+<button onclick="show('*')">*</button>        
+<button onclick="show('/')">/</button>
+<button onclick="show('9')">9</button>
+<button onclick="show('8')">8</button>
+<button onclick="show('7')">7</button>
+<button onclick="show('6')">6</button>
+<button onclick="show('5')">5</button>
+<button onclick="show('4')">4</button>
+<button onclick="show('3')">3</button>
+<button onclick="show('2')">2</button>
+<button onclick="show('1')">1</button>
+<button onclick="show('0')">0</button>
+<button onclick="show('%')">%</button>
+<button onclick="show('(')">(</button>
+<button onclick="show(')')">(</button>
+<button onclick="show('.')">.</button>
+<button onclick="show('00')">00</button>
+<button onclick="show('3.14')">3.14</button>
+<button onclick="remove()">Clear</button>
+<button onclick="delet()">del</button>
+<button onclick="Calculate()" class="equal">=</button>
+        </div>
+    </div>
+    <script>
+        let opsrce=document.getElementById("ops-rce");
+        function show(n){
+            opsrce.value+=n;
+        }
+        function Calculate(){
+            try{
+                opsrce.value=eval( opsrce.value);
+            }
+            catch(err){
+                alert("enter correct input");
+            }
+        }
+        function delet(){
+            opsrce.value= opsrce.value.slice(0,-1);
+        }
+        function remove(){
+            opsrce.value=" ";
+        }
+    </script>
+</body>
+</html>
